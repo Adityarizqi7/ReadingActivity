@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("reading-activity-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cc4869f0de07a57e6854c26ca75ad4f2f46cd03")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab28dd487b014891abefdd83b26719de87099ff7")]
 [assembly: System.Reflection.AssemblyProductAttribute("reading-activity-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("reading-activity-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

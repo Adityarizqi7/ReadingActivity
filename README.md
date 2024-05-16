@@ -1,20 +1,159 @@
 # Reading Activity API
+API to Keep Reading Activities.
 
-## 1. Cara Download dan Penginstalan
+## Penggunaan
+Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal kalian. Jalankan dan kamu akan mendapatkan sebuah JSON Response dengan data. Kamu dapat menguji API nya dengan contoh dibawah ini.
 
-#### C#
+## Routes
+
+<br />
+
+## A. BOOKS API 
+
+<br />
+
+### Get All Books
+`GET /api/books`
+
+### Query Paramaters
+| Parameter    | Type    | Deskripsi                                                   |
+| ---------    | ------- | -----------------------------------------------------------
+| `search`     | String  |  Search Books by keyword                                    |
+| `sort_type`  | String  |  Sorting Books based on 'ASC' or 'DESC'. Default to "ASC"   |
+| `per_page`   | Int     |  Limit per page. Default to 6                               |
+| `page`       | Int     |  Current Page. Default to 1                                 |
+| `genre`      | String  |  Filter Books by Genre                                      |
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "WHERE THE CRAWDADS SING",
+      "author": "Delia Owen",
+      "slug": "where-the-crawdads-sing",
+      "total_pages": 373,
+      "created_at": "2024-05-16T00:00:00",
+      "updated_at": "2024-06-15T00:00:00",
+      "activities": [
+        {
+          "id": 1,
+          "full_name": "Dana",
+          "last_page_read": 11,
+          "last_place_read": "Home",
+          "result": "Test result",
+          "last_time_read": "2024-05-16T02:22:12.759",
+          "created_at": "2024-05-16T06:49:53.7490728",
+          "updated_at": "2024-05-16T06:49:53.7492566",
+          "book": []
+        },
+      ],
+      "genres": [
+        {
+          "id": 1,
+          "name": "Adventure",
+          "slug": "adventure",
+          "created_at": "2024-05-16T00:00:00",
+          "updated_at": "2024-05-16T00:00:00"
+        }
+      ]
+    },
+  ],
+  "meta": {
+    "pagination": {
+      "total_items_all_page": 2,
+      "total_items_current_page": 2,
+      "limit_item_per_page": 6,
+      "total_pages": 1
+    }
+  }
+}
+```
+
+<br />
+
+### Get Detail Book
+`GET/api/books/id`
+
+### Path Paramaters
+
+| Name         | Type    | Deskripsi            |
+| ---------    | ------- | ---------------------
+| `id`         | int     |  The Id of the Book  |
+
+```json
+{
+  "id": 1,
+  "title": "WHERE THE CRAWDADS SING",
+  "author": "Delia Owen",
+  "slug": "where-the-crawdads-sing",
+  "total_pages": 373,
+  "created_at": "2024-05-16T00:00:00",
+  "updated_at": "2024-06-15T00:00:00",
+  "activities": [
+    {
+      "id": 1,
+      "full_name": "Dini",
+      "last_page_read": 11,
+      "last_place_read": "Home",
+      "result": "Test result",
+      "last_time_read": "2024-05-16T02:22:12.759",
+      "created_at": "2024-05-16T06:49:53.7490728",
+      "updated_at": "2024-05-16T06:49:53.7492566",
+      "book": []
+    },
+  ],
+  "genres": [
+    {
+      "id": 1,
+      "name": "Adventure",
+      "slug": "adventure",
+      "created_at": "2024-05-16T00:00:00",
+      "updated_at": "2024-05-16T00:00:00"
+    }
+  ]
+}
+```
+
+<br />
+
+### Create A Book
+`POST/api/books`
+
+### Request Body
+
+| Name         | Type    | Deskripsi                  |
+| ---------    | ------- | ---------------------------
+| `title`      | String  |  Title of The Books        |
+| `author`     | String  |  Author of The Books       |
+| `total_pages`| Int     |  Total Pages of The Books  |
+
+<br />
+
+### Delete A Book
+`DELETE/api/books`
+
+| Name         | Type    | Deskripsi            |
+| ---------    | ------- | ---------------------
+| `id`         | int     |  The Id of the Book  |
+
+<br />
+
+## Download dan Install
+
+### C#
 
 1. **Download C#**: Unduh dan instal .NET SDK terbaru dari [situs resmi .NET](https://dotnet.microsoft.com/download).
    
-#### Visual Studio 2022
+### Visual Studio 2022
 
 2. **Download Visual Studio 2022**: Unduh dan instal [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
    
-#### SQL Server Management Studio 20
+### SQL Server Management Studio 20
 
 3. **Download SQL Server Management Studio 20 (SSMS)**: Unduh dan instal [SQL Server Management Studio 20 (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms).
 
-#### NuGet Packages
+### NuGet Packages
 
 4. **Install NuGet Packages di Visual Studio**: Di Visual Studio, buka NuGet Package Manager dan instal paket-paket berikut:
    1. Microsoft.AspNetCore.Mvc.NewtonsoftJson
@@ -24,12 +163,12 @@
    5. Newtonsoft.Json
    6. Swashbuckle.AspNetCore
 
-#### Koneksi dengan Database
+### Koneksi dengan Database
 
 5. **Membuat Database**: Buat database terlebih dahulu di SQL Server Management Studio (SSMS).
 6. **Hubungkan dengan File appsettings.json**: Hubungkan proyek dengan database Anda dengan menyesuaikan string koneksi di file `appsettings.json`.
 
-## 2. Struktur Folder
+## Struktur Folder
 
 ### Controllers
 Folder yang berisi file untuk mengontrol dan memproses data model seperti Create, Read, Update, Delete, Search, dan Filter.
@@ -64,5 +203,5 @@ File yang berisi service container dan konfigurasi protokol web.
 ### appsettings.json
 File yang berisi konfigurasi aplikasi.
 
-# 3. Terima Kasih
+# Terima Kasih
 Terima kasih telah menggunakan Reading Activity API. Semangat dalam belajar dan mengembangkan proyek Anda, HELL YEAH!
