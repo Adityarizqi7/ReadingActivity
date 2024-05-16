@@ -130,12 +130,218 @@ Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal ka
 
 <br />
 
-### Delete A Book
-`DELETE/api/books`
+### Update A Book
+`PUT/api/books/id`
+
+### Path Paramaters
 
 | Name         | Type    | Deskripsi            |
 | ---------    | ------- | ---------------------
 | `id`         | int     |  The Id of the Book  |
+
+### Request Body
+
+| Name         | Type    | Deskripsi                  |
+| ---------    | ------- | ---------------------------
+| `title`      | String  |  Title of The Books        |
+| `author`     | String  |  Author of The Books       |
+| `total_pages`| Int     |  Total Pages of The Books  |
+
+<br />
+
+### Delete A Book
+`DELETE/api/books/id`
+
+### Path Paramaters
+
+| Name         | Type    | Deskripsi            |
+| ---------    | ------- | ---------------------
+| `id`         | int     |  The Id of the Book  |
+
+<br />
+
+## B. ACTIVITIES API 
+
+<br />
+
+### Get All Activities
+`GET /api/activities`
+
+### Query Paramaters
+| Parameter    | Type    | Deskripsi                                                   |
+| ---------    | ------- | -----------------------------------------------------------
+| `search`     | String  |  Search Books by keyword                                    |
+| `sort_type`  | String  |  Sorting Books based on 'ASC' or 'DESC'. Default to "ASC"   |
+| `per_page`   | Int     |  Limit per page. Default to 6                               |
+| `page`       | Int     |  Current Page. Default to 1                                 |
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "full_name": "Dini",
+      "last_page_read": 11,
+      "last_place_read": "Home",
+      "result": null,
+      "last_time_read": "2024-05-16T02:22:12.759",
+      "created_at": "2024-05-16T06:49:53.7490728",
+      "updated_at": "2024-05-16T06:49:53.7492566",
+      "book": {
+        "id": 1,
+        "title": "WHERE THE CRAWDADS SING",
+        "slug": "where-the-crawdads-sing",
+        "author": "Delia Owen",
+        "total_pages": 373
+      }
+    },
+    {
+      "id": 2,
+      "full_name": "Dane",
+      "last_page_read": 13,
+      "last_place_read": "Library",
+      "result": null,
+      "last_time_read": "2024-05-16T02:40:22.203",
+      "created_at": "2024-05-16T09:40:38.7093487",
+      "updated_at": "2024-05-16T09:40:38.7098472",
+      "book": {
+        "id": 1,
+        "title": "WHERE THE CRAWDADS SING",
+        "slug": "where-the-crawdads-sing",
+        "author": "Delia Owen",
+        "total_pages": 373
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "total_items_all_page": 3,
+      "total_items_current_page": 3,
+      "limit_item_per_page": 6,
+      "total_pages": 1
+    }
+  }
+}
+```
+
+<br />
+
+### Get Detail Activity
+`GET/api/activities/id`
+
+### Path Paramaters
+
+| Name         | Type    | Deskripsi                |
+| ---------    | ------- | ------------------------
+| `id`         | int     |  The Id of the Activity  |
+
+```json
+{
+  "id": 1,
+  "full_name": "Dini",
+  "last_page_read": 11,
+  "last_place_read": "Home",
+  "result": null,
+  "last_time_read": "2024-05-16T02:22:12.759",
+  "created_at": "2024-05-16T06:49:53.7490728",
+  "updated_at": "2024-05-16T06:49:53.7492566",
+  "book": {
+    "id": 1,
+    "title": "WHERE THE CRAWDADS SING",
+    "slug": "where-the-crawdads-sing",
+    "author": "Delia Owen",
+    "total_pages": 373
+  }
+}
+```
+
+<br />
+
+### Create A Activity
+`POST/api/activities/book_id`
+
+### Path Paramaters
+
+| Name      | Type    | Deskripsi           |
+| --------- | ------- | --------------------
+| `book_id` | int     |  The Id of the Book |
+
+### Request Body
+
+| Name              | Type    | Deskripsi                     |
+| ---------         | ------- | ------------------------------
+| `full_name`       | String  |  Full name of Reader          |
+| `last_page_read`  | String  |  Last Page Read of The Book   |
+| `last_place_read` | String  |  Last Place Read of The Book  |
+| `last_time_read`  | String  |  Last Time Read of The Book   |
+| `result`          | String  |  Result Read The Book         |
+
+<br />
+
+### Update A Activity
+`PUT/api/activities/id`
+
+### Path Paramaters
+
+| Name | Type    | Deskripsi                |
+| -----| ------- | -------------------------
+| `id` | int     |  The Id of the Activity  |
+
+### Request Body
+
+| Name              | Type    | Deskripsi                     |
+| ---------         | ------- | ------------------------------
+| `full_name`       | String  |  Full name of Reader          |
+| `last_page_read`  | String  |  Last Page Read of The Book   |
+| `last_place_read` | String  |  Last Place Read of The Book  |
+| `last_time_read`  | String  |  Last Time Read of The Book   |
+| `result`          | String  |  Result Read The Book         |
+
+<br />
+
+### Delete A Activity
+`DELETE/api/activities`
+
+### Path Paramaters
+
+| Name         | Type    | Deskripsi            |
+| ---------    | ------- | ---------------------
+| `id`         | int     |  The Id of the Activity  |
+
+<br />
+
+### Get All Genres
+`GET /api/genres`
+
+### Query Paramaters
+| Parameter    | Type    | Deskripsi                                                   |
+| ---------    | ------- | -----------------------------------------------------------
+| `search`     | String  |  Search Books by keyword                                    |
+| `sort_type`  | String  |  Sorting Books based on 'ASC' or 'DESC'. Default to "ASC"   |
+| `per_page`   | Int     |  Limit per page. Default to 6                               |
+| `page`       | Int     |  Current Page. Default to 1                                 |
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Adventure",
+      "slug": "adventure",
+      "created_at": "2024-05-16T00:00:00",
+      "updated_at": "2024-05-16T00:00:00"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "total_items_all_page": 1,
+      "total_items_current_page": 1,
+      "limit_item_per_page": 6,
+      "total_pages": 1
+    }
+  }
+}
+```
 
 <br />
 
