@@ -22,7 +22,7 @@ namespace book_note_app.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] QueryObjectBook query)
+        public async Task<IActionResult> GetAll([FromQuery] QueryObjectGenre query)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 

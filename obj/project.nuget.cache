@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nJvpAVPxj5OeYF+lpfe+LP7rFo+yoesoxtPgzQsS143F4x2MleYQNOKu4OdYR76w5GP8OSlpTaP/SJE9iZQxlQ==",
+  "dgSpecHash": "XZKHiXsYfoQ5NnVcyRNRzlcHVkP9pBP5XbgzlNqOISYlmWB2LCBkx8rCHqbYjHftjpkfovXuuRGVezXAphr2/Q==",
   "success": true,
-  "projectFilePath": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\book-note-api.csproj",
+  "projectFilePath": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\reading-activity-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ardha\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ardha\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

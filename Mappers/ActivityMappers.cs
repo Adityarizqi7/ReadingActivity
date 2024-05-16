@@ -15,6 +15,7 @@ namespace book_note_app.Mappers
                 Last_page_read = activityModel.Last_page_read,
                 Last_place_read = activityModel.Last_place_read,
                 Last_time_read = activityModel.Last_time_read,
+                Result = activityModel.Result,
                 Created_at = activityModel.Created_at,
                 Updated_at = activityModel.Updated_at,
             };
@@ -29,6 +30,7 @@ namespace book_note_app.Mappers
                 Last_page_read = activityModel.Last_page_read,
                 Last_place_read = activityModel.Last_place_read,
                 Last_time_read = activityModel.Last_time_read,
+                Result = activityModel.Result,
                 Created_at = activityModel.Created_at,
                 Updated_at = activityModel.Updated_at,
                 Book =  new BookWithActivityDto
@@ -50,6 +52,7 @@ namespace book_note_app.Mappers
                 Last_page_read = activityDto.Last_page_read,
                 Last_place_read = activityDto.Last_place_read,
                 Last_time_read = activityDto.Last_time_read,
+                Result = activityDto.Result,
                 BookId = bookId
             };
         }
@@ -62,6 +65,7 @@ namespace book_note_app.Mappers
                 Last_page_read = activityDto.Last_page_read,
                 Last_place_read = activityDto.Last_place_read,
                 Last_time_read = activityDto.Last_time_read,
+                Result = activityDto.Result
             };
         }
     }

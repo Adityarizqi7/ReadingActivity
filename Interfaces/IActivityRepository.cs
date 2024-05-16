@@ -6,7 +6,7 @@ namespace book_note_app.Interfaces
 {
     public interface IActivityRepository
     {
-        Task<List<Activity>> GetAllAsync(QueryObjectBook query);
+        Task<List<Activity>> GetAllAsync(QueryObjectActivity query);
         Task<Activity> GetActvityByIdAsync(int id);
         Task<Activity> CreateActivityAsync(Activity activityModel);
         Task<Activity> UpdateActivityAsync(int id, Activity activityModel);

@@ -71,6 +71,7 @@ namespace book_note_app.Repository
             existingActivity.Last_page_read = activityModel.Last_page_read;
             existingActivity.Last_place_read = activityModel.Last_place_read;
             existingActivity.Last_time_read = activityModel.Last_time_read;
+            existingActivity.Result = activityModel.Result;
 
             await _context.SaveChangesAsync();
 

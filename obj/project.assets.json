@@ -4692,9 +4692,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\book-note-api.csproj",
-      "projectName": "book-note-api",
-      "projectPath": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\book-note-api.csproj",
+      "projectUniqueName": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\reading-activity-api.csproj",
+      "projectName": "reading-activity-api",
+      "projectPath": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\reading-activity-api.csproj",
       "packagesPath": "C:\\Users\\ardha\\.nuget\\packages\\",
       "outputPath": "D:\\adit\\own\\code\\learning\\net-core\\api\\book-note-api\\obj\\",
       "projectStyle": "PackageReference",

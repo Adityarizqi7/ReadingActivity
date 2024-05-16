@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "H4L72dnrPVP+6HBTchZdKg0JaUFRXobPLqtfPL+Ns6U=",
-  "Source": "book-note-api",
-  "BasePath": "_content/book-note-api",
+  "Hash": "qyd5dZqTaGGgthpRtsAqROqQWyGDLHj81eo6HS6Sv/8=",
+  "Source": "reading-activity-api",
+  "BasePath": "_content/reading-activity-api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

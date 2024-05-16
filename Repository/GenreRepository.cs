@@ -42,6 +42,7 @@ namespace book_note_app.Repository
             {
                 genres = genres.Where(genre => genre.Name.Contains(query.search));
             }
+
             var skipData = (query.page - 1) * query.per_page;
 
             return await genres.Skip((query.page - 1) * query.per_page).Take(query.per_page).ToListAsync();

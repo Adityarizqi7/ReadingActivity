@@ -6,7 +6,7 @@ namespace book_note_app.Interfaces
 {
     public interface IGenreRepository
     {
-        Task<List<Genre>> GetAllAsync(QueryObjectBook query);
+        Task<List<Genre>> GetAllAsync(QueryObjectGenre query);
         //Task<Genre> GetGenreBySlugAsync(string slug);
         //Task<Genre> CreateGenreAsync(Genre genreModel);
         //Task<Genre> UpdateGenreAsync(int id, UpdateGenreRequestDto genreDto);
