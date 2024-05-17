@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("reading-activity-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25ae070c46d6e8bdb13d7846f0fc887330902c3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6840ecd39d535a1e0e483be096681b9ec1a89e03")]
 [assembly: System.Reflection.AssemblyProductAttribute("reading-activity-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("reading-activity-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

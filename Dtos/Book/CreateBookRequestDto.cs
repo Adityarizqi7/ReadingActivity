@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using book_note_app.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace book_note_app.Dtos.Book
 {
@@ -14,5 +15,6 @@ namespace book_note_app.Dtos.Book
         public required string Author { get; set; }
         [Range(1, 1000000000)]
         public int? Total_pages { get; set; }
+        public int[]? Genre_id { get; set; }
     }
 }

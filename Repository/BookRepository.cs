@@ -18,37 +18,6 @@ namespace book_note_app.Repository
             _context = context;
         }
 
-        public Task<bool> BookExist(int id)
-        {
-            return _context.Books.AnyAsync(book => book.Id == id);
-        }
-
-        public async Task<Book> CreateBookAsync(Book bookModel)
-        {
-
-            await _context.AddAsync(bookModel);
-            await _context.SaveChangesAsync();
-
-            return bookModel;
-        }
-
-        public async Task<Book> DeleteBookAsync(int id)
-        {
-            var bookModel = await _context.Books.SingleOrDefaultAsync(book => book.Id == id);
-
-            if (bookModel == null)
-            {
-                return null;
-                
-            }
-
-            _context.Books.Remove(bookModel);
-
-            await _context.SaveChangesAsync();
-
-            return bookModel;
-        }
-
         public async Task<List<Book>> GetAllAsync(QueryObjectBook query)
         {
             var books = _context.Books
@@ -90,9 +59,23 @@ namespace book_note_app.Repository
             return await book_detail;
         }
 
+        public Task<bool> BookExist(int id)
+        {
+            return _context.Books.AnyAsync(book => book.Id == id);
+        }
+
+        public async Task<Book> CreateBookAsync(Book bookModel)
+        {
+               
+            await _context.AddAsync(bookModel);
+            await _context.SaveChangesAsync();
+
+            return bookModel;
+        }
+
         public async Task<Book> UpdateBookAsync(int id, UpdateBookRequestDto bookDto)
         {
-            var existingBook = await _context.Books.SingleOrDefaultAsync(book => book.Id == id);
+            var existingBook = await _context.Books.Include(b => b.Genres).SingleOrDefaultAsync(b => b.Id == id);
 
             if (existingBook == null)
             {
@@ -100,6 +83,7 @@ namespace book_note_app.Repository
             } 
             else
             {
+
                 existingBook.Title = bookDto.Title.ToUpper();
                 existingBook.Slug = Regex.Replace(bookDto.Title, @"[^\w\s]", "").ToLower().Replace(" ", "-");
                 existingBook.Author = bookDto.Author;
@@ -109,7 +93,23 @@ namespace book_note_app.Repository
 
                 return existingBook;
             }
+        }
 
+        public async Task<Book> DeleteBookAsync(int id)
+        {
+            var bookModel = await _context.Books.SingleOrDefaultAsync(book => book.Id == id);
+
+            if (bookModel == null)
+            {
+                return null;
+
+            }
+
+            _context.Books.Remove(bookModel);
+
+            await _context.SaveChangesAsync();
+
+            return bookModel;
         }
     }
 }

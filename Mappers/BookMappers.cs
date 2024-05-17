@@ -28,7 +28,7 @@ namespace book_note_app.Mappers
                 Title = bookDto.Title,
                 Author = bookDto.Author,
                 Total_pages = bookDto.Total_pages,
-            };
+             };
         }
     }
 }

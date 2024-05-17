@@ -122,11 +122,12 @@ Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal ka
 
 ### Request Body
 
-| Name         | Type    | Deskripsi                  |
-| ---------    | ------- | ---------------------------
-| `title`      | String  |  Title of The Books        |
-| `author`     | String  |  Author of The Books       |
-| `total_pages`| Int     |  Total Pages of The Books  |
+| Name         | Type         | Deskripsi                  |
+| ---------    | ------------ | ---------------------------
+| `title`      | String       |  Title of The Books        |
+| `author`     | String       |  Author of The Books       |
+| `total_pages`| Int          |  Total Pages of The Books  |
+| `genre_id`   | Array of Int |  The ID of The Genres      |
 
 <br />
 
@@ -141,11 +142,12 @@ Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal ka
 
 ### Request Body
 
-| Name         | Type    | Deskripsi                  |
-| ---------    | ------- | ---------------------------
-| `title`      | String  |  Title of The Books        |
-| `author`     | String  |  Author of The Books       |
-| `total_pages`| Int     |  Total Pages of The Books  |
+| Name         | Type         | Deskripsi                  |
+| ---------    | ------------ | ---------------------------
+| `title`      | String       |  Title of The Books        |
+| `author`     | String       |  Author of The Books       |
+| `total_pages`| Int          |  Total Pages of The Books  |
+| `genre_id`   | Array of Int |  The ID of The Genres      |
 
 <br />
 
