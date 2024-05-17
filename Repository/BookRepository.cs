@@ -1,6 +1,7 @@
 ﻿using api_web_first.Data;
 using api_web_first.Models;
 using book_note_app.Dtos.Book;
+using book_note_app.Dtos.Genre;
 using book_note_app.Helpers;
 using book_note_app.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -85,7 +86,7 @@ namespace book_note_app.Repository
             {
 
                 existingBook.Title = bookDto.Title.ToUpper();
-                existingBook.Slug = Regex.Replace(bookDto.Title, @"[^\w\s]", "").ToLower().Replace(" ", "-");
+                existingBook.Slug = Regex.Replace(bookDto.Title, @"[^\w\s-]", "").ToLower().Replace(" ", "-");
                 existingBook.Author = bookDto.Author;
                 existingBook.Total_pages = bookDto.Total_pages;
 

@@ -16,5 +16,13 @@ namespace book_note_app.Mappers
                 Updated_at = genreModel.Updated_at,
             };
         }
+
+        public static Genre ToGenreFromCreateDTO(this CreateGenreRequestDto genreDto)
+        {
+            return new Genre
+            {
+                Name = genreDto.Name,
+            };
+        }
     }
 }

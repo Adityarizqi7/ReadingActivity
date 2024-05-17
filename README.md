@@ -22,7 +22,7 @@ Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal ka
 | `sort_type`  | String  |  Sorting Books based on 'ASC' or 'DESC'. Default to "ASC"   |
 | `per_page`   | Int     |  Limit per page. Default to 6                               |
 | `page`       | Int     |  Current Page. Default to 1                                 |
-| `genre`      | String  |  Filter Books by Genre                                      |
+| `genre`      | String  |  Filter Books by Slug of Genre                              |
 
 ```json
 {
@@ -322,6 +322,7 @@ Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal ka
 | `sort_type`  | String  |  Sorting Books based on 'ASC' or 'DESC'. Default to "ASC"   |
 | `per_page`   | Int     |  Limit per page. Default to 6                               |
 | `page`       | Int     |  Current Page. Default to 1                                 |
+| `book`       | String  |  Filter Genres by Slug of book                              |
 
 ```json
 {
@@ -344,6 +345,66 @@ Buat sebuah GET, POST, PUT or DELETE dengan menggunakan URL pada server lokal ka
   }
 }
 ```
+
+<br />
+
+### Get Detail Genre
+`GET/api/genres/id`
+
+### Path Paramaters
+
+| Name         | Type    | Deskripsi                |
+| ---------    | ------- | ------------------------
+| `id`         | int     |  The Id of the Genre  |
+
+```json
+{
+  "id": 5,
+  "name": "POST-THRILLER",
+  "slug": "postthriller",
+  "created_at": "2024-05-17T14:21:36.5442571",
+  "updated_at": "2024-05-17T14:21:36.544644"
+}
+```
+
+<br />
+
+### Create A Genre
+`POST/api/genres`
+
+### Request Body
+
+| Name   | Type    | Deskripsi      |
+| ------ | ------- | ---------------
+| `name` | String  |  Name of Genre |
+
+<br />
+
+### Update A Genre
+`PUT/api/genres/id`
+
+### Path Paramaters
+
+| Name | Type    | Deskripsi                |
+| -----| ------- | -------------------------
+| `id` | int     |  The Id of the Genre  |
+
+### Request Body
+
+| Name   | Type    | Deskripsi      |
+| ------ | ------- | ---------------
+| `name` | String  |  Name of Genre |
+
+<br />
+
+### Delete A Genre
+`DELETE/api/genres`
+
+### Path Paramaters
+
+| Name         | Type    | Deskripsi            |
+| ---------    | ------- | --------------------- 
+| `id`         | int     |  The Id of the Genre  |
 
 <br />
 

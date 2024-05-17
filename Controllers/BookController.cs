@@ -97,7 +97,7 @@ namespace book_note_app.Controllers
             var bookModel = bookDto.ToBookFromCreateDTO();
 
             bookModel.Author = bookModel.Author.ToUpper();
-            bookModel.Slug = Regex.Replace(bookDto.Title, @"[^\w\s]", "").ToLower().Replace(" ", "-");
+            bookModel.Slug = Regex.Replace(bookDto.Title, @"[^\w\s-]", "").ToLower().Replace(" ", "-");
             bookModel.Created_at = DateTime.Now;
             bookModel.Updated_at = DateTime.Now;
             
@@ -182,8 +182,6 @@ namespace book_note_app.Controllers
 
                 return Ok(bookModel.ToBookDto());
             }
-
-
         }
 
         [HttpDelete]
@@ -210,7 +208,6 @@ namespace book_note_app.Controllers
             {
                 message = "Book has been deleted."
             });
-
         }
     }
 }

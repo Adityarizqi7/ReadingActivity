@@ -8,5 +8,6 @@ namespace book_note_app.Helpers
         public string? sort_type { get; set; } = "ASC";
         public int per_page { get; set; } = 6;
         public int page { get; set; } = 1;
+        public string book { get; set; }
     }
 }
